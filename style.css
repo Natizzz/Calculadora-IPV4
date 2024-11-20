@@ -1,0 +1,276 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+    background-color: #3b3737;
+    color: #5a5353;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: #756c6c;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(80, 68, 68, 0.5);
+}
+
+/* Styles from the first page */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+    background-color: #5a5656;
+    color: #fff;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: #635656;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(100, 87, 87, 0.5);
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #fff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navbar a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.container {
+    max-width: 600px;
+    margin: 80px auto;
+    padding: 20px;
+    background: rgba(95, 90, 90, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(114, 103, 103, 0.3);
+    text-align: center;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+input[type="text"],
+select {
+    width: calc(100% - 24px);
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+
+button {
+    background-color: #3b7c35; /* Verde profesional */
+    color: #ffffff; /* Texto blanco */
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: calc(100% - 24px);
+    border-radius: 4px;
+    font-size: 16px;
+    position: relative; /* Necesario para el ::after */
+    overflow: hidden; /* Para que el efecto del ::after no sobresalga */
+    z-index: 1; /* Asegura que el botón esté por encima del ::after */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    text-align: center; /* Centrar el texto del botón */
+    display: flex; /* Alineación flex para contenido */
+    align-items: center; /* Centrado vertical */
+    justify-content: center; /* Centrado horizontal */
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    top: -5px; /* Ajustar la posición para que no cubra el texto */
+    left: -5px; /* Ajustar la posición para que no cubra el texto */
+    width: calc(100% + 10px); /* Ajustar el tamaño para cubrir bordes */
+    height: calc(100% + 10px); /* Ajustar el tamaño para cubrir bordes */
+    background: linear-gradient(45deg, #6c757d, #495057); /* Gradiente gris sutil */
+    filter: blur(8px); /* Efecto de difuminado */
+    z-index: -1; /* Debajo del contenido del botón */
+    transition: opacity 0.6s;
+    opacity: 0; /* Inicialmente invisible */
+    border-radius: 8px; /* Borde suave para alinearlo con el botón */
+}
+
+button:hover::after {
+    opacity: 1; /* Aparece el resplandor al hacer hover */
+}
+
+button:hover {
+    background-color: #218838; /* Verde más oscuro al hacer hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada */
+}
+
+button:active {
+    background-color: #1e7e34; /* Verde aún más oscuro al hacer clic */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra más sutil */
+    transform: translateY(1px); /* Efecto de presión */
+}
+
+
+.results {
+    margin-top: 20px;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.results p {
+    color: #fff;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #436487, #324a64);
+    z-index: -1;
+    animation: animatedBackground 30s linear infinite;
+}
+
+@keyframes animatedBackground {
+    from { background-position: 0 0; }
+    to { background-position: 1000px 0; }
+}
+
+.floating-numbers {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.number {
+    position: absolute;
+    font-size: 3em;
+    color: rgba(255, 255, 255, 0.1);
+    animation: floatNumbers 10s linear infinite;
+    left: calc(100% * var(--x));
+}
+
+@keyframes floatNumbers {
+    0% {
+        transform: translateY(1000%);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+
+
+
+/* Additional styles for the second page */
+.container {
+    max-width: 800px;
+    padding: 20px;
+    background-color: #0000009d;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table th, .table td {
+    border: 2px solid #000000;
+    padding: 8px;
+    text-align: left;
+}
+
+.table th {
+    background-color: #c04a3a;
+}
+
+/* Estilo para el contenedor de la IP en binario */
+#ipBinaryColored {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2em;
+    background-color: #f8f9fa; /* Fondo claro */
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* Estilos para cada porción en binario */
+.red-portion {
+    background-color: #ff4d4d; /* Fondo rojo */
+    color: #ffffff; /* Texto blanco */
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.subnet-portion {
+    background-color: #007bff; /* Fondo azul */
+    color: #ffffff; /* Texto blanco */
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.host-portion {
+    background-color: #28a745; /* Fondo verde */
+    color: #ffffff; /* Texto blanco */
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+/* Estilo para la leyenda */
+.legend {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f8f9fa; /* Fondo claro para la leyenda */
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 0.9em;
+}
+
+/* Estilo para cada ítem de la leyenda */
+.legend-item {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
